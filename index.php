@@ -15,9 +15,17 @@ date_default_timezone_set("Asia/Shanghai");
 echo "今天是 ". date("Y/m/d"). "<br />";
 echo "当前时间：". date("h:i:sa"). "<br />";
 echo "author:Pauling Zhou<br />";
-?>
-<?php
 echo htmlentities($_SERVER["PHP_SELF"]) . "<br/>";
+function hi(){
+    echo "Hello from function_hi()!";
+    echo "<br/>";
+}
+hi();
+include('hello_world.php');
+if(function_exists("hello_world")){
+    hello_world();
+}else
+    echo "function hello_world does not exist";
 ?>
 <!--comment used in html--!>
 </body>
